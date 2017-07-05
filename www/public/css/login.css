@@ -1,0 +1,50 @@
+.column.two-column {
+    color: white;
+    font-weight: bolder;
+    display: block;
+    height: 30%;
+    text-indent: 10px;
+}
+
+.column.two-column div {
+    display: block;
+    margin-top: 20px;
+}
+
+.column.two-column:hover {
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.column.two-column div input {
+    height: 20%;
+    font-size: 1.2rem;
+    border-radius: 7px;
+}
+
+.column.two-column div input[name='password'] {
+    height: 20%;
+    margin-left: 20px;
+}
+
+button {
+    width: 70px;
+    height: 40px;
+    font-size: 24px;
+    color: #99231d;
+    border-radius: 5px;
+}
+
+@media (max-width:750px) {
+    section {
+        width: 100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .column.two-column {
+        color: white;
+        font-weight: bolder;
+        display: block;
+        height: 20%;
+        text-indent: 10px;
+    }
+}

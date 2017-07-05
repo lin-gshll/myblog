@@ -1,0 +1,12 @@
+<nav aria-label="...">
+    <ul class="pager">
+        <li class="previous"><a href="/admin/user?page={{page -1}}"><span aria-hidden="true">上一页</span> </a></li>
+        <li class="text-success" style="font-size:1.8rem">
+            一共有<span class="text-info">{{count}}</span>条数据, 每页显示
+            <span>{{limit}}</span>条数据，一共有<span>{{pages}}</span>页， 当前第
+            <span>{{page}}</span>页</li>
+        <li class="next">
+            <a href="/admin/user?page={{page +1}}"> <span aria-hidden="true">下一页</span></a>
+        </li>
+    </ul>
+</nav>

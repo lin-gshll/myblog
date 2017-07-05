@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的博客</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.1);
+            color: black;
+            font-size: 16px;
+            font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+        }
+        
+        header {
+            width: 90%;
+            height: 10%;
+            margin: 0 auto;
+            border-bottom: solid 2px black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .header-left {
+            width: 60%;
+            height: 100%;
+            font-size: 1.5rem;
+            padding-left: 20%;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-right {
+            width: 40%;
+            height: 100%;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .header-right div,
+        .header-right span {
+            display: flex;
+            padding-top: 20px;
+        }
+        
+        main {
+            width: 90%;
+            height: 100%;
+            margin: 0 auto;
+            margin-top: 30px;
+            border-bottom: dotted 2px black;
+            display: flex;
+        }
+        /*
+        *左面主体
+        */
+        
+        .content {
+            width: 60%;
+            height: 100%;
+            font-size: 1.1rem;
+            margin: 0 auto;
+        }
+        
+        .content-one div.title {
+            font-family: sans-serif;
+            font-size: 1.4rem;
+            margin: 0 auto;
+            width: 98%;
+            padding-bottom: 10px;
+            border-bottom: solid 1px #f5f5d5;
+            display: flex;
+        }
+        /*
+        *分类
+        */
+        
+        .content div.content-one p {
+            width: 90%;
+            margin: 0 auto;
+            padding-top: 5px;
+            display: flex;
+            justify-content: flex-end;
+        }
+        /*]
+        *冒号
+        */
+        
+        .comma {
+            display: inline-block;
+            font-weight: bolder;
+            margin-right: 10px;
+            margin-top: 2px;
+        }
+        /*
+        *描述
+        */
+        
+        .content-two .desc {
+            width: 90%;
+            margin: 0 auto;
+            font-style: oblique;
+            padding-bottom: 10px;
+            border-bottom: dotted 2px #f5f5d5;
+        }
+        
+        .desc div {
+            padding-top: 10px;
+        }
+        
+        .timer {
+            width: 90%;
+            font-size: 15px;
+            font-family: "宋体";
+            font-style: italic;
+            margin: 0 auto;
+        }
+        
+        .timer-bg {
+            font-size: 16px;
+            font-family: "宋体";
+            font-style: italic;
+        }
+        
+        .content-third .title {
+            font-family: sans-serif;
+            font-size: 1.4rem;
+            margin: 10px auto;
+            width: 100%;
+            padding-bottom: 5px;
+            border-bottom: solid 1px #f5f5d5;
+            display: flex;
+        }
+        
+        .content-third .list-title {
+            width: 80%;
+            margin: 0 auto;
+        }
+        
+        .content-third .list-title ul li {
+            list-style-type: circle;
+            align-items: center;
+            padding: 5px;
+        }
+        /*
+        *右面主体
+        */
+        
+        .blogclass {
+            width: 30%;
+            height: 100%;
+            margin: 0 auto;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+        
+        .blogclass-style {
+            background-color: #3e3e3e;
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.5rem;
+            min-height: 2.71rem;
+            border-radius: 8px;
+        }
+        
+        .blogclass-one {
+            display: flex;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+            flex-direction: column;
+        }
+        
+        .blogclass-style.blogclass-one p {
+            width: 90%;
+            margin: 0 auto;
+            color: white;
+            padding-bottom: 10px;
+            border-bottom: solid 2px #e5e5e5;
+        }
+        
+        .blogclass-tag {
+            color: #212212;
+            font-size: 25px;
+            margin-right: 5px;
+        }
+        
+        .blogclass-style.blogclass-one a {
+            text-indent: 30px;
+            color: #ebebeb;
+            text-decoration: none;
+            padding-top: 5px;
+        }
+        
+        .blogclass-style.blogclass-one a:hover {
+            text-indent: 30px;
+            color: white;
+            text-decoration: underline;
+            padding-top: 6px;
+        }
+        
+        .blogclass-style.blogclass-two {
+            margin-top: 10px;
+        }
+        
+        @media (max-width:750px) {
+            main {
+                flex-direction: column;
+                margin-top: 10px;
+            }
+            .header-right div {
+                display: none;
+            }
+            .content {
+                width: 100%;
+            }
+            .blogclass {
+                width: 100%;
+                margin-left: 0px;
+            }
+        }
+    </style>
+</head>
+
+<body class="body">
+    <header>
+        <div class="header-left">
+            我的个人日志
+        </div>
+        <div class="header-right">
+            <div class="form-group has-success has-feedback">
+                <input type="text" class="form-control">
+                <span class=" glyphicon glyphicon-zoom-in form-control-feedback"></span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <div class="content-one">
+                <div class="title">{{_datas[0].title}}</div>
+
+                <p>分类 <span class="comma">:</span> {{_datas[0].type}}</p>
+            </div>
+            <div class="content-two">
+                <h4>1、</h4>
+
+                <div class="desc">
+                    {{_datas[0].content}}...
+                    <p>
+                        <a href="/blog/reading?id={{firstId}}">继续阅读全文☞</a>
+                    </p>
+
+                </div>
+
+                <p class="timer">{{_datas[0].datatime|date("Y年m月d日")}}</p>
+            </div>
+            <div class="content-third">
+                <div class="title">最新文章</div>
+                <div class="list-title">
+                    <ul>
+                        {% for items in _datas%}
+                        <li>
+                            <span class="timer-bg">{{items.datatime|date("Y年m月d日")}}</span>
+                            <span> ☛ </span>
+                            <a href="/blog/reading?id={{items._id.toString()}}">
+                            {% if items.title.length >18 %}
+                                {{items.title.substring(0,18)}}.....
+                            {% else  %}
+
+                            {{items.title}}
+                            {% endif%}
+                            
+                            </a>
+                        </li>
+                        {% endfor%}
+
+                        <li>
+                            <a href="#">更多文章</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="blogclass">
+            <div class="blogclass-style blogclass-one">
+                <p>分类信息</p>
+                {% for items in _types%}
+                <a href="/blog/blogclass?id={{items._id.toString()}}">
+                    <span class="blogclass-tag">▶</span> {{items.type}}
+                </a> {% endfor%}
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

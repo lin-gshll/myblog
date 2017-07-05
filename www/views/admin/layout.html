@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的博客</title>
+    <!--boostrap兼容IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/bootstrap-theme.min.css" rel="stylesheet">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="/">首页</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">用户管理 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/user">用户列表</a></li>
+                            <li><a href="#">添加用户</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            文章管理 <span class="caret"></span>
+                            </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/blogs">文章列表</a></li>
+                            <li><a href="/admin/blogs/add">添加文章</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">分类管理 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/admin/blogclass">分类首页</a></li>
+                            <li><a href="/admin/blogclass/add">添加分类</a></li>
+                        </ul>
+                    </li>
+
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{username}} <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+
+    </nav>
+    <div class="container">
+        {%block main%}{% endblock %}
+    </div>
+
+
+
+
+
+
+    <script>
+        // $("#btn").click(function() {
+        //     $.ajax({
+        //         url: "/api/user/comment",
+        //         type: "post",
+        //         data: {
+        //             username: $("input[name='username'").val(),
+        //             email: $("input[name='email']").val(),
+        //             content: $("textarea[name='content']").val(),
+        //             blogid: $("input[name='blogid']").val()
+
+        //         }
+        //     })
+        // })
+    </script>
+
+</body>
+
+</html>
