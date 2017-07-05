@@ -7,4 +7,4 @@ module.exports = new schema({
         type: Number,
         default: 0
     }
-})
+});

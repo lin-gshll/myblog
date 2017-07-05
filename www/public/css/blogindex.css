@@ -1,0 +1,251 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html {
+    width: 100%;
+    color: black;
+    font-family: 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
+}
+
+body {
+    width: 100%;
+    background: rgb(245, 245, 213);
+    padding: 10px 120px;
+}
+
+header {
+    width: 90%;
+    height: 10%;
+    margin: 0 auto;
+    border-bottom: solid 2px rgb(211, 211, 211);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-left {
+    width: 60%;
+    height: 100%;
+    font-size: 2.8rem;
+    padding-left: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.header-right {
+    width: 40%;
+    height: 100%;
+    font-size: 1.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-right div,
+.header-right span {
+    display: flex;
+    padding-top: 20px;
+}
+
+main {
+    width: 98%;
+    height: 100%;
+    margin: 0 auto;
+    margin-top: 30px;
+    display: flex;
+}
+
+img {
+    max-width: 100%;
+}
+
+article {
+    padding: 40px;
+}
+
+
+/*
+        *左面主体
+        */
+
+.content {
+    width: 60%;
+    height: 100%;
+    font-size: 1.7rem;
+    margin: 0 auto;
+}
+
+.content-one div.title {
+    font-family: sans-serif;
+    font-size: 2.88rem;
+    margin: 0 auto;
+    width: 98%;
+    padding-bottom: 10px;
+    border-bottom: solid 1px #f5f5d5;
+    display: flex;
+}
+
+
+/*
+        *分类
+        */
+
+.content div.content-one p {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/*]
+        *冒号
+        */
+
+.comma {
+    display: inline-block;
+    font-weight: bolder;
+    margin-right: 10px;
+    margin-top: 2px;
+}
+
+
+/*
+        *描述
+        */
+
+.content-two .desc {
+    width: 90%;
+    margin: 0 auto;
+    font-style: oblique;
+    padding-bottom: 10px;
+    border-bottom: dotted 2px #f5f5d5;
+}
+
+.desc div {
+    padding-top: 10px;
+}
+
+.timer {
+    width: 90%;
+    font-size: 15px;
+    font-family: "宋体";
+    font-style: italic;
+    margin: 0 auto;
+}
+
+.timer-bg {
+    font-size: 16px;
+    font-family: "宋体";
+    font-style: italic;
+}
+
+.content-third .title {
+    font-family: sans-serif;
+    font-size: 2.4rem;
+    margin: 10px auto;
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: solid 1px #f5f5d5;
+    display: flex;
+}
+
+.content-third .list-title {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.content-third .list-title ul li {
+    list-style-type: circle;
+    align-items: center;
+    padding: 5px;
+}
+
+
+/*
+        *右面主体
+        */
+
+.blogclass {
+    width: 30%;
+    height: 100%;
+    font-size: 1.7rem;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.blogclass-style {
+    background-color: #3e3e3e;
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.7rem;
+    min-height: 2.71rem;
+    border-radius: 8px;
+}
+
+.blogclass-one {
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem 1rem;
+    flex-direction: column;
+}
+
+.blogclass-style.blogclass-one p {
+    width: 90%;
+    margin: 0 auto;
+    color: white;
+    padding-bottom: 10px;
+    border-bottom: solid 2px #e5e5e5;
+}
+
+.blogclass-tag {
+    color: #212212;
+    font-size: 25px;
+    margin-right: 5px;
+}
+
+.blogclass-style.blogclass-one a {
+    text-indent: 30px;
+    color: #ebebeb;
+    text-decoration: none;
+    padding-top: 5px;
+}
+
+.blogclass-style.blogclass-one a:hover {
+    text-indent: 30px;
+    color: white;
+    text-decoration: underline;
+    padding-top: 6px;
+}
+
+.blogclass-style.blogclass-two {
+    margin-top: 10px;
+}
+
+@media (max-width:750px) {
+    body {
+        width: 100%;
+        background: rgb(245, 245, 213);
+        padding: 5px;
+    }
+    main {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+    .header-right div {
+        display: none;
+    }
+    .content {
+        width: 100%;
+    }
+    .blogclass {
+        width: 100%;
+        margin-left: 0px;
+    }
+    .timer-bg {
+        display: none;
+    }
+}

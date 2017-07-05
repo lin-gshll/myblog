@@ -359,6 +359,12 @@ router.post("/blogs/add", function(req, res, next) {
     item.save().then(function(i) {
 
         if (i) {
+            var blogpath = path.join(__dirname, `../views/blog/${i.type}/${i._id.toString()}.html`);
+            var html = fs.readFileSync(path.join(__dirname, `../views/blog/blog_layout.html`));
+            console.log(html);
+            console.log(blogpath);
+            fs.writeFileSync(blogpath, html);
+
             res.render("admin/success.html", {
                 username: req.username,
                 message: "保存成功",
