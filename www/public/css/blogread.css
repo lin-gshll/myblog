@@ -1,3 +1,13 @@
+@font-face {
+    font-family: Georgia;
+    src: url('/fonts/Georgia.ttf');
+}
+
+@font-face {
+    font-family: fontone;
+    src: url('/fonts/first.ttf');
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -6,20 +16,22 @@
 html {
     width: 100%;
     color: black;
-    font-family: 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
+    font-family: Georgia, 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
 }
 
 body {
     width: 100%;
     background: rgb(245, 245, 213);
-    padding: 10px 150px;
+    padding: 20px 120px;
 }
 
 header {
     width: 90%;
-    height: 10%;
     margin: 0 auto;
-    border-bottom: solid 2px rgb(211, 211, 211);
+    color: #556677;
+    font-size: 1.8rem;
+    border-bottom: solid 2px #d3d3d3;
+    font-family: fontone;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,8 +40,8 @@ header {
 .header-left {
     width: 60%;
     height: 100%;
-    font-size: 2.8rem;
-    padding-left: 20%;
+    font-size: 2.0rem;
+    font-family: Georgia;
     display: flex;
     align-items: center;
 }
@@ -37,7 +49,7 @@ header {
 .header-right {
     width: 40%;
     height: 100%;
-    font-size: 1.1rem;
+    font-size: 1.7rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,12 +65,26 @@ main {
     width: 98%;
     height: 100%;
     margin: 0 auto;
-    margin-top: 30px;
+    padding: 30px;
     display: flex;
 }
 
 img {
     max-width: 100%;
+}
+
+.timer {
+    width: 90%;
+    font-size: 15px;
+    font-style: italic;
+    margin: 0 auto;
+    font-family: Georgia;
+}
+
+.timer-bg {
+    font-size: 16px;
+    font-style: italic;
+    font-family: Georgia;
 }
 
 article {
@@ -72,26 +98,6 @@ article {
     margin: 0 auto;
     margin-bottom: 20px;
     border-radius: 5px;
-}
-
-
-/*]
-        *冒号
-        */
-
-.comma {
-    display: inline-block;
-    font-weight: bolder;
-    margin-top: 3px;
-    margin-right: 5px;
-}
-
-.timer {
-    width: 90%;
-    font-size: 15px;
-    font-family: "宋体";
-    font-style: italic;
-    margin: 0 auto;
 }
 
 .comment-main {
@@ -150,7 +156,7 @@ article {
     margin: 10px auto;
     padding: 20px;
     border-radius: 10px;
-    background: rgba(0, 128, 0, 0.1);
+    background: rgba(110, 128, 110, 0.3);
     display: flex;
     justify-content: space-around;
 }
@@ -181,24 +187,20 @@ article {
 }
 
 .blog-type-main .blog-next {
-    font-size: 1.9rem;
+    font-size: 1.8rem;
     display: flex;
     flex-direction: column;
 }
 
 .blog-type-main .blog-next a {
-    font-size: 2.1rem;
-    color: rgb(157, 203, 239);
+    font-size: 1.7rem;
+    color: rgba(0, 203, 122, 0.9);
     text-decoration: underline;
     padding-left: 10px;
 }
 
 .blog-type-main .blog-next a:hover {
-    font-size: 2.1rem;
     color: green;
-    text-decoration: underline;
-    padding-left: 10px;
-    opacity: 0.8;
 }
 
 .blog-title {
@@ -281,6 +283,11 @@ h1 {
     padding: 20px;
     display: flex;
     justify-content: flex-end;
+}
+
+.share a {
+    font-family: "微软雅黑";
+    font-size: 18px;
 }
 
 @media (max-width:750px) {

@@ -12,7 +12,10 @@
 <body class="body">
     <header>
         <div class="header-left">
-            我的个人日志
+            首页<span>»»</span>
+            <a href="/blog">Blog</a>
+            <span>»»</span>
+            <a href="javascript:window.location.reload() ;">{{_datas[0].type}}</a>
         </div>
         <div class="header-right">
             <div class="form-group has-success has-feedback">
@@ -25,22 +28,22 @@
         <section class="content">
             <div class="content-one">
                 <div class="title">
-                    <p>分类 <span class="comma">:</span> {{_datas[0].type}}</p>
+                    <p>分类 <span class="comma">:</span>
+                        <a href="javascript:window.location.reload() ;">{{_datas[0].type}}</a></p>
                 </div>
             </div>
             <div class="content-third">
-                <div class="title">最新文章</div>
+                <div class="title">最新文章({{_count}})</div>
                 <div class="list-title">
                     <ul>
                         {% for items in _datas%}
                         <li>
                             <span class="timer-bg">{{items.datatime|date("Y年m月d日")}}</span>
-                            <span class="point"> ☛ </span>
+                            <span class="point"> » </span>
                             <a href="/blog/reading?id={{items._id.toString()}}">
                             {% if items.title.length >18 %}
                                 {{items.title.substring(0,18)}}.....
                             {% else  %}
-
                             {{items.title}}
                             {% endif%}
                             
@@ -57,9 +60,9 @@
         </section>
         <aside class="blogclass">
             <div class="blogclass-style blogclass-one">
-                <p>评论信息</p>
+                <p>分类信息</p>
                 {% for items in _types%}
-                <a href="/blog/comment?id={{items._id.toString()}}">
+                <a href="/blog/blogclass?id={{items._id.toString()}}">
                     <span class="blogclass-tag">▶</span> {{items.type}}
                 </a> {% endfor%}
             </div>

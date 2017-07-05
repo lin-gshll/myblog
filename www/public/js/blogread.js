@@ -33,15 +33,17 @@ window.onload = function() {
     /*
     提交引用
     */
+var quoteall = "";
+var quoteuser = "";
 $(".quotebtn").click(function() {
     var quote = $(this).parent().parent();
     //获取作者标题
-    var quoteuser = quote.children(".comment-header ").text().trim();
+    quoteuser = quote.children(".comment-header ").text().trim() || "";
     var quotecont = quote.children(".comment-content").children(".blogcomment").contents().filter(function() {
         return this.nodeType === 3;
     }).text().trim(); //获取文本节点
-    var quoteall = `<div class='comment commentquo'>\n\t<p>回复了${quoteuser}</p>\n\t<blockquote>${quotecont}</blockquote>\n</div>\n`;
-    $("textarea[name='content']").val(quoteall);
+    quoteall = `<div class='comment commentquo'>\n\t<p>回复了${quoteuser}</p>\n\t<blockquote>${quotecont}</blockquote>\n</div>\n`;
+    $("textarea[name='content']").val("回复" + quoteuser + "\n");
 
 })
 
@@ -50,14 +52,31 @@ $(".quotebtn").click(function() {
 */
 $("#btn").click(function() {
 
+    var content = $("textarea[name='content']").val() || "";
+    var username = $("input[name='username'").val() || "";
+    var email = $("input[name='email']").val() || "";
+    var blogid = $("input[name='blogid']").val() || "";
+    if (content.indexOf(">") > -1 || content.indexOf("script") > -1 || content.indexOf("<") > -1) {
+        alert("不能包含>、<、script等特殊符号");
+        return;
+    }
+    if (username.indexOf(">") > -1 || username.indexOf("script") > -1 || username.indexOf("<") > -1) {
+        alert("不能包含>、<、script等特殊符号");
+        return;
+    }
+    var reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;
+    if (!reg.test(email) && email.length != 0) { //要么填。要么必须满足
+        alert("邮箱格式不正确");
+        return;
+    }
     $.ajax({
         url: "/api/user/comment",
         type: "post",
         data: {
-            username: $("input[name='username'").val(),
-            email: $("input[name='email']").val(),
-            content: $("textarea[name='content']").val(),
-            blogid: $("input[name='blogid']").val()
+            username: username,
+            email: email,
+            content: quoteall + content.substring(quoteuser.length + 2),
+            blogid: blogid
         },
         success: function(_data) {
             //alert(_data);

@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>我的博客</title>
+    <title>Lin Qian's Personal Website</title>
     <meta name="viewport" content="width=device-width">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/blogindex.css">
@@ -12,7 +12,8 @@
 <body class="body">
     <header>
         <div class="header-left">
-            我的个人日志
+            首页<span>»»</span>
+            <a href="/blog">Blog</a>
         </div>
         <div class="header-right">
             <div class="form-group has-success has-feedback">
@@ -48,7 +49,7 @@
                         {% for items in _datas%}
                         <li>
                             <span class="timer-bg">{{items.datatime|date("Y年m月d日")}}</span>
-                            <span> ☛ </span>
+                            <span> » </span>
                             <a href="/blog/reading?id={{items._id.toString()}}">
                             {% if items.title.length >18 %}
                                 {{items.title.substring(0,18)}}.....

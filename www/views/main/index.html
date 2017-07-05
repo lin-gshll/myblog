@@ -28,9 +28,10 @@
         </section>
     </article>
     <script>
-        let color = ["#add", "#133", "#ad2", "#191", "#ac1233", "#135783"];
+        let color = ["#add", "#133", "#191", "#ac1233", "#135783"];
         setInterval(function() {
-            let ran = Math.abs(Math.floor((Math.random() * 10) - 4));
+            let ran = Math.abs(Math.floor((Math.random() * 10) - 5));
+            console.log(color[ran]);
             document.getElementsByTagName("body")[0].style.background =
                 color[ran];
         }, 3000);
