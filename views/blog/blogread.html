@@ -13,8 +13,9 @@
 
 <body class="body">
     <header>
+        <a name="top"></a>
         <div class="header-left">
-            首页<span>»»</span>
+            <a href="/">首页</a><span>»»</span>
             <a href="/blog">Blog</a>
             <span>»»</span>
             <a href="/blog/blogclass?id={{_types._id.toString()}}">Reading</a>
@@ -82,7 +83,7 @@
                         </div>
                     </div>
                     <div class="comment-footer">
-                        <span class="timer">{{items.datatime|date("Y年m月d日 H:s:m",-480)}}</span> |
+                        <span class="timer">{{items.datatime|date("Y年m月d日 H:s:m",-480)}}</span>
                         <a href="#quote" class="quotebtn">回复</a>
                     </div>
                 </div>
@@ -101,27 +102,31 @@
                 </div>
                 <div class="form-group">
                     <label for="username">您的大名:</label>
-                    <input type=" text" class="form-control" name="username" id="username" placeholder="必填字段" required>
+                    <input type=" text" class="form-control" name="username" id="username" placeholder="必填字段" required="required">
                 </div>
                 <div class="form-group ">
                     <label for="email ">您的邮箱：</label>
-                    <input type="email" class="form-control" name="email" id="email" placeholder="选填字段" required>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="选填字段">
                 </div>
-                <button type="button" id="btn" class="btn btn-default">提交</button>
+                <div class="progress1" style="display:none;">
+                    <progress value="10" max="100" style="width:100%;">
+                       
+                    </progress>
+                    <span>10%</span>
+                </div>
+                <button type="submit" id="btn" class="btn btn-default">提交</button>
             </form>
         </div>
     </div>
-
+    <a href="#top">返回顶部</a>
+    <footer class="text-right ">
+        <span class="timer-bg">linqian -2017</span>
+    </footer>
     <input type="hidden" name="blogid" value="{{_datas._id.toString()}}">
     <input type="hidden" name="sharedata" value="{{_datas.title}} ">
     <input type="hidden" name="data" value="{{_datas.content}} ">
     <script src="/js/jquery.min.js "></script>
     <script src="/js/blogread.js"></script>
-    <footer class="text-center ">
-        Copyright 2017-2018 All Rights Reserved 蜀ICP备 17011586 号
-    </footer>
-
-
 </body>
 
 </html>

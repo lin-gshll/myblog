@@ -112,7 +112,7 @@ img {
 }
 
 .point {
-    color: wheat;
+    color: black;
 }
 
 
@@ -180,13 +180,12 @@ img {
 }
 
 .content-third .list-title ul li a {
-    color: green;
-    opacity: 0.5;
+    opacity: 1;
 }
 
 .content-third .list-title ul li a:hover {
     color: green;
-    opacity: 1;
+    opacity: 0.4;
 }
 
 
@@ -203,7 +202,9 @@ img {
 }
 
 .blogclass-style {
-    background-color: #3e3e3e;
+    background-color: #deebf7;
+    color: black;
+    border-radius: 8px;
     font-size: 1.8rem;
     min-height: 2.71rem;
 }
@@ -218,27 +219,25 @@ img {
 .blogclass-style.blogclass-one p {
     width: 90%;
     margin: 0 auto;
-    color: white;
     padding-bottom: 10px;
     border-bottom: solid 2px #e5e5e5;
 }
 
 .blogclass-tag {
-    color: #212212;
     font-size: 1.7rem;
     margin-right: 5px;
 }
 
 .blogclass-style.blogclass-one a {
     text-indent: 30px;
-    color: #ebebeb;
+    color: green;
     text-decoration: none;
     padding-top: 5px;
 }
 
 .blogclass-style.blogclass-one a:hover {
     text-indent: 30px;
-    color: white;
+    color: inherit;
     text-decoration: underline;
     padding-top: 6px;
 }
@@ -254,6 +253,9 @@ img {
     main {
         flex-direction: column;
         margin-top: 10px;
+    }
+    .header-left {
+        width: 100%;
     }
     .header-right div {
         display: none;
