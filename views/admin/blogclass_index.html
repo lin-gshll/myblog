@@ -1,0 +1,29 @@
+<!--继承-->
+{% extends 'layout.html' %}
+
+<!--重写-->
+{%block main%}
+<ol class="breadcrumb">
+    <li><a href="/">管理首页</a></li>
+    <li><span>分类列表</span></li>
+</ol>
+<h3 class="text-info text-center">分类列表</h3>
+
+<table class="table table-hover table-striped">
+    <tr>
+        <th>ID</th>
+        <th>分类名称</th>
+        <th>操作</th>
+
+    </tr>
+    {% for blogs in blogtypes%}
+    <tr>
+        <td>{{blogs._id.toString()}}</td>
+        <td>{{blogs.type}}</td>
+        <td><a href="/admin/blogclass/edit?id={{blogs._id.toString()}}">修改</a>
+            <span class="text-info text-bg">|</span>
+            <a href="/admin/blogclass/delete?id={{blogs._id.toString()}}">删除</a>
+        </td>
+    </tr>
+    {%endfor%}
+</table>

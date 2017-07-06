@@ -1,0 +1,20 @@
+<!--继承-->
+{% extends 'layout.html' %}
+
+<!--重写-->
+{%block main%}
+
+<div class="panel panel-success">
+    <div class="panel-heading">
+        <h4>成功提示</h4>
+    </div>
+    <div class="panel-body">
+        <h2 class="text-info text-center">{{message}}</h2>
+    </div>
+    <div class="panel-footer">
+
+        <a href="{% if url %} {{url}} {% else %} /admin {% endif%}">点击跳转</a>
+    </div>
+
+</div>
+{%endblock%}

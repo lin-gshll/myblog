@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Lin Qian's Personal Website</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/blogindex.css">
+</head>
+
+<body class="body">
+    <header>
+        <div class="header-left">
+            首页<span>»»</span>
+            <a href="/blog">Blog</a>
+        </div>
+        <div class="header-right">
+            <div class="form-group has-success has-feedback">
+                <input type="text" class="form-control">
+                <span class=" glyphicon glyphicon-zoom-in form-control-feedback"></span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="content">
+            <div class="content-one">
+                <div class="title">{{_datas[0].title}}</div>
+
+                <p>分类 <span class="comma">:</span> {{_datas[0].type}}</p>
+            </div>
+            <div class="content-two">
+                <h4>1、</h4>
+
+                <div class="desc">
+                    {{_datas[0].content}}...
+                    <p>
+                        <a href="/blog/reading?id={{firstId}}">继续阅读全文☞</a>
+                    </p>
+
+                </div>
+
+                <p class="timer">{{_datas[0].datatime|date("Y年m月d日")}}</p>
+            </div>
+            <div class="content-third">
+                <div class="title">最新文章</div>
+                <div class="list-title">
+                    <ul>
+                        {% for items in _datas%}
+                        <li>
+                            <span class="timer-bg">{{items.datatime|date("Y年m月d日")}}</span>
+                            <span> » </span>
+                            <a href="/blog/reading?id={{items._id.toString()}}">
+                            {% if items.title.length >18 %}
+                                {{items.title.substring(0,18)}}.....
+                            {% else  %}
+
+                            {{items.title}}
+                            {% endif%}
+                            
+                            </a>
+                        </li>
+                        {% endfor%}
+
+                        <li>
+                            <a href="#">更多文章</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="blogclass">
+            <div class="blogclass-style blogclass-one">
+                <p>分类信息</p>
+                {% for items in _types%}
+                <a href="/blog/blogclass?id={{items._id.toString()}}">
+                    <span class="blogclass-tag">▶</span> {{items.type}}
+                </a> {% endfor%}
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

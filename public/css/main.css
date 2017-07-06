@@ -1,0 +1,102 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: Helvetica, 'Hiragino Sans GB', 'Microsoft Yahei', '微软雅黑', Arial, sans-serif;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    background: #133;
+}
+
+article {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+section {
+    width: 40%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+}
+
+.column {
+    display: flex;
+    margin: 10px auto;
+}
+
+.one-column {
+    width: 100%;
+    height: 30%;
+    color: white;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.two-column {
+    width: 80%;
+    height: 15%;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+    align-items: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.third-column {
+    width: 80%;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    margin-left: 10px;
+}
+
+.two-column:hover {
+    background: white;
+    padding: 2px;
+}
+
+.two-column:hover a {
+    color: black;
+}
+
+.column.third-column a:hover {
+    color: black;
+    background: white;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.one-column:hover {
+    color: whitesmoke;
+    border-bottom: solid 1px white;
+}
+
+hr {
+    width: 80%;
+    height: 2px;
+    margin: 10px auto;
+}
+
+@media (max-width:750px) {
+    section {
+        width: 85%;
+        height: 95%;
+        background-color: rgba(0, 0, 0, 0.2);
+        border-radius: 20px;
+    }
+}

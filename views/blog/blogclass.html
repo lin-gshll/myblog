@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>我的博客</title>
+    <meta name="viewport" content="width=device-width">
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/blogclass.css">
+</head>
+
+<body class="body">
+    <header>
+        <div class="header-left">
+            首页<span>»»</span>
+            <a href="/blog">Blog</a>
+            <span>»»</span>
+            <a href="javascript:window.location.reload() ;">{{_datas[0].type}}</a>
+        </div>
+        <div class="header-right">
+            <div class="form-group has-success has-feedback">
+                <input type="text" class="form-control">
+                <span class=" glyphicon glyphicon-zoom-in form-control-feedback"></span>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="content">
+            <div class="content-one">
+                <div class="title">
+                    <p>分类 <span class="comma">:</span>
+                        <a href="javascript:window.location.reload() ;">{{_datas[0].type}}</a></p>
+                </div>
+            </div>
+            <div class="content-third">
+                <div class="title">最新文章({{_count}})</div>
+                <div class="list-title">
+                    <ul>
+                        {% for items in _datas%}
+                        <li>
+                            <span class="timer-bg">{{items.datatime|date("Y年m月d日")}}</span>
+                            <span class="point"> » </span>
+                            <a href="/blog/reading?id={{items._id.toString()}}">
+                            {% if items.title.length >18 %}
+                                {{items.title.substring(0,18)}}.....
+                            {% else  %}
+                            {{items.title}}
+                            {% endif%}
+                            
+                            </a>
+                        </li>
+                        {% endfor%}
+
+                        <li>
+                            <a href="#">更多文章</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <aside class="blogclass">
+            <div class="blogclass-style blogclass-one">
+                <p>分类信息</p>
+                {% for items in _types%}
+                <a href="/blog/blogclass?id={{items._id.toString()}}">
+                    <span class="blogclass-tag">▶</span> {{items.type}}
+                </a> {% endfor%}
+            </div>
+        </aside>
+    </main>
+
+    <!--<input type="text" name="username" value="">
+    <br>
+    <input type="Email" name="email" value="">
+    <br>
+    <textarea rows="3" cols="3" name="content"></textarea>
+    <br>
+    <input type="text" name="blogid" value="">
+    <button type="button" id="btn">提交</button>-->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script>
+        $("#btn").click(function() {
+            $.ajax({
+                url: "/api/user/comment",
+                type: "post",
+                data: {
+                    username: $("input[name='username'").val(),
+                    email: $("input[name='email']").val(),
+                    content: $("textarea[name='content']").val(),
+                    blogid: $("input[name='blogid']").val()
+                },
+                success: function(_data) {
+                    alert(_data);
+                }
+            })
+        })
+    </script>
+</body>
+
+</html>

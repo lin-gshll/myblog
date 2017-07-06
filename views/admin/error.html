@@ -1,0 +1,18 @@
+<!--继承-->
+{% extends 'layout.html' %}
+
+<!--重写-->
+{%block main%}
+<div class="panel panel-warning">
+    <div class="panel-heading">
+        <h4>错误提示</h4>
+    </div>
+    <div class="panel-body">
+        <h2 class="text-danger text-center"> {{message}}</h2>
+    </div>
+    <div class="panel-footer">
+        <a href="javascript:window.history.back();">返回上一步</a>
+    </div>
+
+</div>
+{%endblock%}
