@@ -28,7 +28,6 @@ router.post("/user/comment", function(req, res, next) {
         isAdmin: true
     });
     user.save().then(function(t) {
-        console.log(t._id.toString());
         res.end(t._id.toString());
         return;
 
@@ -42,13 +41,23 @@ router.get("/user/login", function(req, res, next) {
 router.post("/user/login/check", function(req, res, next) {
     //登录验证
     let username = req.body.username;
-    let password = req.body.password;
-    if (username == "admin" && password == "12345") {
-        //返回Cookies信息保存在浏览器中
-        req.cookies.set('userAdmin', username);
-        res.end("1");
-    } else {
-        res.end("0");
-    }
+    let email = req.body.password;
+    User.findOne({
+        username: username,
+        email: email
+    }).then(function(admin) {
+        if (admin) {
+            if (admin.isAdmin) {
+                //返回Cookies信息保存在浏览器中
+                req.cookies.set('userAdmin', username);
+                res.end("1");
+            } else {
+                res.end("0");
+            }
+        } else {
+            res.end("-1");
+        }
+    })
+
 });
 module.exports = router;

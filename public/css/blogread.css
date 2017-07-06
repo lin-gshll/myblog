@@ -22,7 +22,7 @@ html {
 body {
     width: 100%;
     background: rgb(245, 245, 213);
-    padding: 20px 120px;
+    padding: 20px 150px;
 }
 
 header {
@@ -154,9 +154,9 @@ article {
     width: 90%;
     font-size: 1.9rem;
     margin: 10px auto;
-    padding: 20px;
+    padding: 10px;
     border-radius: 10px;
-    background: rgba(110, 128, 110, 0.3);
+    background: #8bc1ed;
     display: flex;
     justify-content: space-around;
 }
@@ -176,14 +176,14 @@ article {
 
 .blog-type-main .blog-type a:hover {
     font-size: 2.1rem;
-    color: rgb(157, 203, 239);
+    color: rgba(123, 3, 222, 0.9);
     opacity: 0.9;
     text-decoration: underline;
     padding-left: 10px;
 }
 
 .blog-type-main .seat {
-    width: 30%;
+    width: 20%;
 }
 
 .blog-type-main .blog-next {
@@ -194,7 +194,7 @@ article {
 
 .blog-type-main .blog-next a {
     font-size: 1.7rem;
-    color: rgba(0, 203, 122, 0.9);
+    color: rgba(123, 3, 222, 0.9);
     text-decoration: underline;
     padding-left: 10px;
 }
@@ -230,6 +230,7 @@ h1 {
 
 .blog-content {
     width: 95%;
+    font-size: 1.7rem;
     margin: 0 auto;
 }
 
@@ -320,34 +321,31 @@ h1 {
     /*回复*/
     .quotebtn {
         font-size: 10px;
+        margin: 0px;
     }
     .timer {
         /*display: none;*/
         font-size: 0px;
     }
+    .comment-content,
     .comment.commentquo {
         padding: 0px;
     }
-    .comment.commentquo blockquote {
-        padding: 0px;
+    .blog-type-main .blog-next {
+        margin-top: 30px;
     }
 }
 
 @media (max-width:550px) {
     .blog-type-main {
-        width: 90%;
-        font-size: 1.9rem;
-        margin: 10px auto;
         padding: 20px;
-        border-radius: 10px;
-        background: rgba(0, 128, 0, 0.1);
-        display: flex;
         flex-direction: column;
     }
     .blog-type-main .blog-type {
         display: flex;
         justify-content: flex-start;
     }
+    .comment-content,
     .comment.commentquo {
         padding: 0px;
     }

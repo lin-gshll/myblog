@@ -147,9 +147,6 @@ router.post("/blogclass/add", (req, res, next) => {
 
     }).then(function(data) {
         if (data) {
-            if (!fs.existsSync(path.join(__dirname, "../views/blog/" + blogtype))) {
-                fs.mkdirSync(path.join(__dirname, "../views/blog/" + blogtype));
-            }
             res.render("admin/success.html", {
                 username: req.username,
                 message: "保存成功",
@@ -229,9 +226,6 @@ router.post("/blogclass/edit", function(req, res, next) {
             }, {
                 type: type
             }).then(function() {
-                if (!fs.existsSync(path.join(__dirname, "../views/blog/" + type))) {
-                    fs.mkdirSync(path.join(__dirname, "../views/blog/" + type));
-                }
                 res.render("admin/success.html", {
                     username: req.username,
                     message: "修改成功",
@@ -357,14 +351,7 @@ router.post("/blogs/add", function(req, res, next) {
         //datatime: date
     });
     item.save().then(function(i) {
-
         if (i) {
-            var blogpath = path.join(__dirname, `../views/blog/${i.type}/${i._id.toString()}.html`);
-            var html = fs.readFileSync(path.join(__dirname, `../views/blog/blog_layout.html`));
-            console.log(html);
-            console.log(blogpath);
-            fs.writeFileSync(blogpath, html);
-
             res.render("admin/success.html", {
                 username: req.username,
                 message: "保存成功",
@@ -463,8 +450,8 @@ router.post("/blogs/edit", function(req, res, next) {
 });
 //删除文章
 router.get("/blogs/delete", function(req, res, next) {
-
     let id = req.query.id || 0;
+    console.log(id);
     Blog.findOne({
         _id: id
     }).then(function(i) {
@@ -473,7 +460,7 @@ router.get("/blogs/delete", function(req, res, next) {
             Blog.remove({
                 _id: id
             }).then(function(t) {
-                //把对用的用户评论也删了
+                //把对应的用户评论也删了
                 User.remove({
                     blogid: id
                 });

@@ -9,6 +9,7 @@ router.get("/", function(req, res, next) {
 
     Blogtype.find().sort({ _id: 1 }).then(function(types) {
         Blog.find().sort({ _id: -1 }).limit(8).then(function(datas) {
+
             var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
             var index = reg.exec(datas[0].content).index;
             datas[0].content = datas[0].content.substring(index, index + 20);
