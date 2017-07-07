@@ -12,7 +12,7 @@ router.get("/", function(req, res, next) {
 
             var reg = new RegExp("[\\u4E00-\\u9FFF]+", "g");
             var index = reg.exec(datas[0].content).index;
-            datas[0].content = datas[0].content.substring(index, index + 20);
+            datas[0].content = datas[0].content.substring(3, 20);
             res.render("blog/blogindex.html", {
                 _datas: datas,
                 _types: types,
