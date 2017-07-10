@@ -55,7 +55,7 @@ function isErr(obj) {
 }
 
 function isErr(obj) {
-    if (obj.indexOf(">") > -1 || obj.indexOf("<script>") > -1 || obj.indexOf("<") > -1) {
+    if (obj.indexOf(">") > -1 || obj.indexOf("script") > -1 || obj.indexOf("<") > -1) {
         return true;
     } else {
         return false;
@@ -76,7 +76,7 @@ $("#btn").click(function() {
         return;
     }
     if (data.username.length == 0 || data.content.length == 0) {
-        alert("名字的内容不能为空");
+        alert("名字或内容不能为空");
         return;
     }
     var reg = /^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$/;

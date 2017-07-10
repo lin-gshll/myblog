@@ -5,8 +5,7 @@ tablename.findOne({ 条件 }).then(function(t) {});
 修改； tablename.updata({ 条件 }， { 修改内容 }).then(function(t) { t.result.n });
 删除: tablename.remove({ 条件 }).then(function(t) { t.result.n });
 排序： tablename.find().sort({ _id: 1 }): 1 表示升序 ;
-swig解析文本：{% autoescape %}{{items.content}}{% endautoescape %}
-swig过滤器（ 过滤时间）:{{items.datatime|date("Y年m月d日 H:i:s",-480)}}</span>
+swig过滤器（ 过滤时间）;
 获取节点下面的节点：contents():获取段落中的所有文本节点，
 <div id = "text_test" > test text 
   <a href = "techbrood.com" rel = "external nofollow" >
@@ -29,13 +28,7 @@ var text = $("#text_test > a").first().contents().filter(function()
  表单处理 ：
  express框架中:req.files(bodypares模块)或者：formidable 
  git的使用：
- git config --global user.name/email "";
- git remote add myblog ww..//..git;
- git pull myblog master:先下载分支
- git push myblog master；上传
  ls:目录
  mkdir创建文件
  git add .:提交暂存区
  git commit -m “备注”:提交仓库
- git pull myblog master:先下载分支
- git push myblog master；上传

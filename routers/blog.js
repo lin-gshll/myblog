@@ -29,7 +29,6 @@ router.get("/blogclass", function(req, res, next) {
     Blogtype.findOne({
         _id: typeid
     }).then(function(types) {
-
         Blog.find({
             type: types.type
         }).sort({ _id: -1 }).then(function(datas) {
@@ -37,11 +36,19 @@ router.get("/blogclass", function(req, res, next) {
                 Blog.find({
                     type: types.type
                 }).count(function(err, count) {
-                    res.render("blog/blogclass.html", {
-                        _datas: datas || null,
-                        _types: t || null,
-                        _count: count || 0
-                    });
+					if(t && datas)
+					{
+						 res.render("blog/blogclass.html", {
+								_datas: datas || null,
+								_types: t || null,
+								_count: count || 0
+						});
+					}
+					else
+					{
+						res.render("main/index.html");
+					}
+                
                 })
 
             })

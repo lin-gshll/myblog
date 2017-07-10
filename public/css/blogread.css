@@ -50,16 +50,12 @@ header {
     width: 40%;
     height: 100%;
     font-size: 1.7rem;
+	 margin-top:30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.header-right div,
-.header-right span {
-    display: flex;
-    padding-top: 20px;
-}
 
 main {
     width: 98%;
@@ -219,19 +215,20 @@ h1 {
 .blogtime {
     width: 90%;
     margin: 0 auto;
-    padding-bottom: 20px;
+    padding-bottom: 0px;
     display: flex;
     justify-content: flex-end;
 }
 
 .blogtimeinner {
-    padding-right: 40px;
+    padding-right: 30px;
 }
 
 .blog-content {
     width: 95%;
     font-size: 1.7rem;
     margin: 0 auto;
+	padding:10px;
 }
 
 .newcomment {
@@ -255,13 +252,13 @@ h1 {
 
 .newcomment input {
     width: 50%;
-    font-size: 20px;
+    font-size: 15px;
     background: rgba(214, 224, 224, 0.2);
 }
 
 .newcomment textarea {
     width: 80%;
-    font-size: 20px;
+    font-size: 15px;
     background: rgba(214, 224, 224, 0.3);
 }
 

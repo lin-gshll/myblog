@@ -1,6 +1,17 @@
 var express = require("express");
 var router = express.Router();
 var User = require("../models/user");
+//统一数据放回格式
+// var responseDate;
+//一进来就处理数据
+// router.use(function(req, res, next) {
+//     responseDate = {
+//         code: "0",
+//         message: ""
+//     }
+//     next();
+// })
+
 router.post("/user/comment", function(req, res, next) {
 
     let username = req.body.username || 0;
@@ -47,10 +58,10 @@ router.post("/user/login/check", function(req, res, next) {
             res.end("-1");
         }
     })
-
 });
-router.get("/contact", function(req, res, next) {
-    res.send("邮箱:1432667757@qq.com");
-    res.end();
+router.get("/contact",function(req,res,next)
+{
+	res.send("邮箱:1432667757@qq.com");
+		res.end();
 })
 module.exports = router;

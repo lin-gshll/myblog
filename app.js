@@ -79,7 +79,7 @@ mongoose.connect("mongodb://localhost:27017/blog", function(err) {
     } else {
         console.log("数据库连接成功");
         //监听端口号
-        app.listen(8080, function() {
+        app.listen(80,"120.25.194.191", function() {
             console.log("listening 8080");
         });
     }

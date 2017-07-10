@@ -13,8 +13,6 @@ module.exports = new schema({
     blogid: String,
     //管理员
     isAdmin: Boolean,
-    datatime: {
-        type: Date,
-        default: Date.now()
-    }
+    datatime: Date,
+      
 })

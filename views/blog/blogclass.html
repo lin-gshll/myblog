@@ -3,8 +3,9 @@
 
 <head>
     <meta charset="utf-8">
-    <title>我的博客</title>
+    <title>Blog class</title>
     <meta name="viewport" content="width=device-width">
+	<link rel="Shortcut Icon" href="/img/favicon.ico" />
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="/css/blogclass.css">
 </head>
@@ -12,16 +13,21 @@
 <body class="body">
     <header>
         <div class="header-left">
-            首页<span>»»</span>
+            <a href="/"> 首页</a>
+			<span>»»</span>
             <a href="/blog">Blog</a>
             <span>»»</span>
             <a href="javascript:window.location.reload() ;">{{_datas[0].type}}</a>
         </div>
         <div class="header-right">
-            <div class="form-group has-success has-feedback">
-                <input type="text" class="form-control">
-                <span class=" glyphicon glyphicon-zoom-in form-control-feedback"></span>
-            </div>
+          <script type="text/javascript">
+		  (function(){document.write(unescape('%3Cdiv id="bdcs"%3E%3C/div%3E'));
+		  var bdcs = document.createElement('script');
+		  bdcs.type = 'text/javascript';
+		  bdcs.async = true;bdcs.src = 'http://znsv.baidu.com/customer_search/api/js?sid=4479131484187503064' + '&plate_url=' + encodeURIComponent(window.location.href) + '&t=' + Math.ceil(new Date()/3600000);
+		  var s = document.getElementsByTagName('script')[0];s.parentNode.insertBefore(bdcs, s);})();
+		  </script>
+           
         </div>
     </header>
     <main>
@@ -33,12 +39,12 @@
                 </div>
             </div>
             <div class="content-third">
-                <div class="title">最新文章({{_count}})</div>
+                <div class="title timer-bg">最新文章({{_count}})</div>
                 <div class="list-title">
                     <ul>
                         {% for items in _datas%}
                         <li>
-                            <span class="timer-bg">{{items.datatime|date("Y年m月d日")}}</span>
+                            <span class="timer-bg">{{items.datatime|date('Y年m月d日 H:i:s',-480)}}</span>
                             <span class="point"> » </span>
                             <a href="/blog/reading?id={{items._id.toString()}}">
                             {% if items.title.length >18 %}
@@ -51,9 +57,9 @@
                         </li>
                         {% endfor%}
 
-                        <li>
-                            <a href="#">更多文章</a>
-                        </li>
+                        <!-- <li> -->
+                            <!-- <a href="#">更多文章</a> -->
+                        <!-- </li> -->
                     </ul>
                 </div>
             </div>
@@ -79,23 +85,7 @@
     <button type="button" id="btn">提交</button>-->
     <script src="/js/jquery.min.js"></script>
     <script src="/js/bootstrap.min.js"></script>
-    <script>
-        $("#btn").click(function() {
-            $.ajax({
-                url: "/api/user/comment",
-                type: "post",
-                data: {
-                    username: $("input[name='username'").val(),
-                    email: $("input[name='email']").val(),
-                    content: $("textarea[name='content']").val(),
-                    blogid: $("input[name='blogid']").val()
-                },
-                success: function(_data) {
-                    alert(_data);
-                }
-            })
-        })
-    </script>
+
 </body>
 
 </html>

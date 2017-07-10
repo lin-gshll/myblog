@@ -67,7 +67,6 @@ a {
 
 .two-column:hover {
     background: white;
-    padding: 2px;
 }
 
 .two-column:hover a {
@@ -77,7 +76,6 @@ a {
 .column.third-column a:hover {
     color: black;
     background: white;
-    padding: 4px;
     border-radius: 5px;
 }
 
@@ -94,9 +92,9 @@ hr {
 
 @media (max-width:750px) {
     section {
-        width: 85%;
+        width: 90%;
         height: 95%;
         background-color: rgba(0, 0, 0, 0.2);
-        border-radius: 20px;
+        border-radius: 10px;
     }
 }
