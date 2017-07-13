@@ -3,11 +3,6 @@
     src: url('/fonts/Georgia.ttf');
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
 html {
     width: 100%;
     color: black;
@@ -43,13 +38,11 @@ header {
 .header-right {
     width: 40%;
     height: 100%;
-    margin-top:30px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
-
 
 main {
     width: 98%;

@@ -8,11 +8,6 @@
     src: url('/fonts/first.ttf');
 }
 
-* {
-    margin: 0px;
-    padding: 0px;
-}
-
 html {
     width: 100%;
     color: black;
@@ -49,12 +44,11 @@ header {
     width: 40%;
     height: 100%;
     font-size: 1.7rem;
-	 margin-top:30px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-
 
 main {
     width: 98%;

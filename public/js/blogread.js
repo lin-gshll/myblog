@@ -1,6 +1,7 @@
 window.onload = function() {
+
         //分享设置
-        $(".blog-content ").prepend($("input[name='data' ] ").val());
+        $(".blog-content ").prepend($("input[name='data']").val());
         window._bd_share_config = {
             common: {
                 bdSign: "on ",
