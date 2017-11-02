@@ -43,6 +43,7 @@ app.use("/blog", require('./routers/blog'));
 app.use("/", require('./routers/main'));
 app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function(req, res, next) {
 
+
     //客户端上传文件设置
     var imgDir = '/img/ueditor/'
     var ActionType = req.query.action;
