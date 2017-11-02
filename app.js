@@ -1,3 +1,4 @@
+require('babel-polyfill');
 var express = require("express");
 var path = require("path");
 //服务端的对象
