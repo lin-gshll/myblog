@@ -1,4 +1,3 @@
-require('babel-polyfill');
 var express = require("express");
 var path = require("path");
 //服务端的对象
@@ -11,7 +10,7 @@ app.use(bodyParse.urlencoded({ extended: true }));
 app.use(bodyParse.json());
 //设置cookies信息
 var Cookies = require("cookies");
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     //把cookies放到头信息中
     req.cookies = new Cookies(req, res);
     // res.setHeader("Cache-Control", "no-cache, no-store, must-revalidate"); // HTTP 1.1.
@@ -42,8 +41,7 @@ app.use("/admin", require('./routers/admin'));
 app.use("/api", require('./routers/api'));
 app.use("/blog", require('./routers/blog'));
 app.use("/", require('./routers/main'));
-app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function(req, res, next) {
-
+app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function (req, res, next) {
 
     //客户端上传文件设置
     var imgDir = '/img/ueditor/'
@@ -73,16 +71,16 @@ app.use("/ueditor/ue", ueditor(path.join(__dirname, 'public'), function(req, res
     }
 }));
 
-
-mongoose.connect("mongodb://localhost:27017/blog", function(err) {
+var port = 8081
+mongoose.connect("mongodb://localhost/blog", function (err) {
     if (err) {
         console.log("数据库连接失败");
         return;
     } else {
         console.log("数据库连接成功");
         //监听端口号
-        app.listen(8090, function() {
-            console.log("listening 8090");
+        app.listen(port, function () {
+            console.log("listening " + port);
         });
     }
 });
