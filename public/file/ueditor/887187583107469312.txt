@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="utf-8">
+    <title>又帅又爱笑</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        ul {
+            height: auto;
+            width: 416px;
+            margin: 150px auto;
+            overflow: hidden;
+            border: 1px #000 solid;
+            border-right: none;
+            border-bottom: none;
+        }
+        
+        ul li {
+            float: left;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px #000 solid;
+            list-style-type: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+
+    <script>
+        var ul = document.getElementsByTagName("ul")[0];
+        var li = ul.getElementsByTagName("li");
+        var arr = [];
+        var arrAll = []; //记录每组可安放的li
+        var count = 0;
+        init();
+
+        function init() {
+            createGrid(); //初始化显示样式
+            setQueen(0); //安放第一个棋子
+            setInterval(show, 1000); //展现动画
+        }
+
+        function createGrid() { //
+            for (var i = 0; i < 8 * 8; i++) {
+                var newLi = document.createElement("li");
+                newLi.index = -1; //初始值为-1，方便操作安放
+                //newLi.innerHTML = newLi.index;
+                ul.appendChild(newLi);
+            }
+            for (var i = 0; i < 8; i++) {
+                for (var j = 0; j < 8; j++) {
+                    //为每个li添加坐标(对象属性可以帮助我们做很多事情)
+                    li[i * 8 + j].x = i;
+                    li[i * 8 + j].y = j;
+                    li[i * 8 + j].innerHTML = li[i * 8 + j].x + "," + li[i * 8 + j].y;
+                }
+            }
+        }
+
+        function setQueen(iqueen) {
+            //等于8说明每一次的第八个皇后已经放好了，也是回调函数的终止条件
+            if (iqueen == 8) {
+                arrAll.push(arr.concat()); //添加到数组
+                count++; //记录总数
+                return;
+            }
+            for (var i = 0; i < 8; i++) {
+                if (li[iqueen * 8 + i].index == -1) { //为-1的地方才可以安放皇后
+                    li[iqueen * 8 + i].index = iqueen;
+                    arr.push(li[iqueen * 8 + i]); //尝试安放皇后
+                    //li[iqueen * 8 + i].innerHTML = iqueen;
+                    var x = li[iqueen * 8 + i].x;
+                    var y = li[iqueen * 8 + i].y;
+                    for (var j = 0; j < 64; j++) {
+                        if (li[j].index == -1 && (li[j].x == x || li[j].y == y ||
+                                (li[j].x - li[j].y) == (x - y) || (li[j].x + li[j].y) == (x + y))) {
+                            li[j].index = iqueen; //这些地方都不能安放皇后，index改变
+                            //li[j].innerHTML = iqueen;
+                        }
+                    }
+                    setQueen(iqueen + 1); //安放下一个皇后
+                    //回溯
+                    arr.pop(); //回溯说明上一次尝试加入的皇后不满足，去掉
+                    for (var j = 0; j < 64; j++) {
+                        if (li[j].index == iqueen) {
+                            //回溯之后要把对应以前设的值更改过来
+                            li[j].index = -1;
+                        }
+                    }
+                }
+            }
+        }
+
+        function show() {
+            var ran = Math.ceil(Math.random() * arrAll.length);
+            for (var i = 0; i < 64; i++) { //将背景重置
+                li[i].style.backgroundColor = "";
+            }
+            for (var i = 0; i < 8; i++) {
+                arrAll[ran][i].style.backgroundColor = "#999";
+            }
+        }
+    </script>
+</body>

@@ -1,7 +1,6 @@
 window.onload = function() {
-
         //分享设置
-        $(".blog-content ").prepend($("input[name='data']").val());
+        //$(".blog-content ").prepend($("input[name='data' ] ").val());
         window._bd_share_config = {
             common: {
                 bdSign: "on ",
@@ -13,11 +12,7 @@ window.onload = function() {
                 "tag ": "share_1",
                 "bdSize ": 16
             }],
-            slide: [{
-                bdImg: 0,
-                bdPos: "right",
-                bdTop: 100
-            }],
+       
             image: [{
                 viewType: 'list',
                 viewPos: 'top',
@@ -76,7 +71,7 @@ $("#btn").click(function() {
         alert("不能包含>、<、script等特殊符号");
         return;
     }
-    if (data.username.length == 0 || data.content.length == 0) {
+	   if (data.username.length == 0 || data.content.length == 0) {
         alert("名字或内容不能为空");
         return;
     }

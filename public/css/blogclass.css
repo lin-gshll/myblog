@@ -8,9 +8,11 @@
     src: url('/fonts/first.ttf');
 }
 
+
 html {
     width: 100%;
     color: black;
+	font-size:10px;
     font-family: Georgia, 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
 }
 
@@ -44,11 +46,12 @@ header {
     width: 40%;
     height: 100%;
     font-size: 1.7rem;
-    margin-top: 30px;
+	 margin-top:30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 
 main {
     width: 98%;
@@ -239,6 +242,7 @@ img {
 @media (max-width:750px) {
     body {
         padding: 5px;
+		font-size:9px;
     }
     main {
         flex-direction: column;
@@ -257,7 +261,7 @@ img {
         width: 100%;
         margin-left: 0px;
     }
-    .timer-bg {
+    span.timer-bg {
         display: none;
     }
     .point {

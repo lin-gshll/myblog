@@ -3,9 +3,12 @@
     src: url('/fonts/Georgia.ttf');
 }
 
+
+
 html {
     width: 100%;
     color: black;
+	font-size:10px;
     font-family: Georgia, 'Trebuchet MS', Arial, 'Lucida Grande', Verdana, Lucida, Helvetica, sans-serif;
 }
 
@@ -19,7 +22,7 @@ header {
     width: 90%;
     margin: 0 auto;
     color: #556677;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     border-bottom: solid 2px #d3d3d3;
     display: flex;
     justify-content: center;
@@ -38,11 +41,13 @@ header {
 .header-right {
     width: 40%;
     height: 100%;
-    margin-top: 30px;
+    margin-top:30px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+
 
 main {
     width: 98%;
@@ -138,6 +143,10 @@ img {
     padding-top: 10px;
 }
 
+.desc p
+{
+	margin-top:10px;
+}
 p.timer {
     display: flex;
     justify-content: flex-end;
@@ -226,8 +235,10 @@ p.timer {
 
 @media (max-width:750px) {
     body {
+		
         width: 100%;
         background: rgb(245, 245, 213);
+		font-size:9px;
         padding: 5px;
     }
     main {
